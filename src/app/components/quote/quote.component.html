@@ -1,1 +1,8 @@
-<p>quote works!</p>
+<div class="quote-item" *ngFor="let quote of quotes">{{quote.message}} 
+    <p>
+        <!-- {{quote.mostLikes}} -->
+    </p> 
+    <div class="quote-detail-wrapper">
+        <app-quote-detail [quotedescription]="quote"></app-quote-detail>
+    </div>
+</div>
