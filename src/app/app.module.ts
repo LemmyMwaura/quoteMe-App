@@ -12,7 +12,7 @@ import { QuoteComponent } from './components/quote/quote.component';
 import { FormComponent } from './components/form/form.component';
 import { QuoteDetailComponent } from './components/quote-detail/quote-detail.component';
 
-
+import { MostUpvotesDirective } from './directives/most-upvotes.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +21,8 @@ import { QuoteDetailComponent } from './components/quote-detail/quote-detail.com
     ButtonComponent,
     QuoteComponent,
     FormComponent,
-    QuoteDetailComponent
+    QuoteDetailComponent,
+    MostUpvotesDirective
   ],
   imports: [
     BrowserModule,

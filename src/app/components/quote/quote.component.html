@@ -1,7 +1,7 @@
-<div class="quote-item" *ngFor="let quote of quotes; let i =index">
+<div [ngClass]="{ highest: quote.isMostLiked }" appMostUpvotes  class="quote-item" *ngFor="let quote of quotes; let i =index">
     {{quote.message}}
     <p>
-        <!-- {{quote.mostLikes}} -->
+        <!-- {{quote.isMostLiked}} -->
     </p>
     <div class="quote-detail-wrapper">
         <app-quote-detail [quotedescription]="quote"></app-quote-detail>
@@ -9,24 +9,26 @@
     <div class="votes">
         <div class="vote-items">
             <div class="up">
-                <app-button 
+                <app-button id="special"
                     color="rgba(0,0,0,0)" 
                     iconcolor="RGBA(255, 67, 0, 1)" 
                     [icontype]="upIcon"
                     (click)="upvote(i)"
+                    (click)="totalVotes(i)"
                 ></app-button>
                 {{ quote.upvoteNo }}
             </div>
             <div class="down">
-                <app-button 
+                <app-button  id="special"
                     color="rgba(0,0,0,0)" 
                     iconcolor="RGBA(147, 145, 255, 1)" 
                     [icontype]="downIcon"
-                    (click)="downvote(i)"  
+                    (click)="downvote(i)"
+                    (click)="totalVotes(i)"
                 ></app-button>
                 {{ quote.downvoteNo }}
             </div>
         </div>
-        <p>{{2}}</p>
+        <p class="text-votes"> Total Votes: {{ quote.totalVotes }}</p>
     </div>
 </div>

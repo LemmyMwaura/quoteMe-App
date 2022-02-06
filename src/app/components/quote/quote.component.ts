@@ -14,11 +14,22 @@ export class QuoteComponent implements OnInit {
   downIcon = faArrowAltCircleDown;
 
   upvote(index:number) {
-    this.quotes[index], this.quotes[index].upvoteNo++
+    this.quotes[index].upvoteNo++
+    // this.quotes[index].isMostLiked = true
   }
 
   downvote(index:number) {
     this.quotes[index].downvoteNo++
+  }
+
+  totalVotes(index:number){
+    this.quotes[index].totalVotes ++
+  }
+
+  FindMostLiked(index:number){
+    this.quotes.forEach( (quote) => {
+      console.log(quote.totalVotes)
+    })
   }
 
   quotes: QuoteInterface[] = [

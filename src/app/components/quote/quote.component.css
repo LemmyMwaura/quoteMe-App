@@ -22,9 +22,26 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-top:1rem;
 }
 
 .vote-items {
     display: flex;
     gap: 1rem;
+    background-color: rgba(185, 28, 86,0.9);
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.4rem;
+    color: white;
+}
+
+.text-votes{
+    background-color: rgba(185, 28, 86,0.9);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: white;
+    /* letter-spacing: 0.04rem; */
+}
+
+.highest{
+    background-color: rgba(0,0,0,0.4);
 }
