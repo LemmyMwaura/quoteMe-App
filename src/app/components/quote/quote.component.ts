@@ -26,10 +26,9 @@ export class QuoteComponent implements OnInit {
     this.quotes[index].totalVotes ++
   }
 
-  FindMostLiked(index:number){
-    this.quotes.forEach( (quote) => {
-      console.log(quote.totalVotes)
-    })
+  addNewQuote(newitem:QuoteInterface){
+    console.log(newitem)
+    return this.quotes.push(newitem)
   }
 
   quotes: QuoteInterface[] = [
