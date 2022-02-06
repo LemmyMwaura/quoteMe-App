@@ -1,0 +1,11 @@
+fa-icon{
+    font-size: 1rem;
+}
+
+fa-icon:active{
+    color: green;
+}
+
+button:active{
+    color: red;
+}

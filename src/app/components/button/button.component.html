@@ -1,1 +1,6 @@
-<p>button works!</p>
+<button href="#" [ngStyle]="{'background-color': color, 
+                    'color':textcolor
+                }" 
+        class="btn">{{ text }}
+        <fa-icon [ngStyle]="{'color': iconcolor }" [icon]="icontype" ></fa-icon>
+</button>
