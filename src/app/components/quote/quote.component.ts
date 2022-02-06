@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuoteInterface } from 'src/app/Interface-s/quote-interface';
+import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-quotes',
@@ -7,6 +9,9 @@ import { QuoteInterface } from 'src/app/Interface-s/quote-interface';
   styleUrls: ['./quote.component.css'],
 })
 export class QuoteComponent implements OnInit {
+  upIcon = faArrowAltCircleUp
+  downIcon = faArrowAltCircleDown
+
   quotes: QuoteInterface[] = [
     {
       message:

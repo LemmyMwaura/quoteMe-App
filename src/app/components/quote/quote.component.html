@@ -5,4 +5,17 @@
     <div class="quote-detail-wrapper">
         <app-quote-detail [quotedescription]="quote"></app-quote-detail>
     </div>
+    <div class="votes">
+        <div class="vote-items">
+            <div class="up">
+                <app-button color="rgba(0,0,0,0)" iconcolor="RGBA(255, 67, 0, 1)" [icontype]="upIcon"></app-button>
+                1
+            </div>
+            <div class="down">
+                <app-button color="rgba(0,0,0,0)" iconcolor="RGBA(147, 145, 255, 1)" [icontype]="downIcon"></app-button>
+                0
+            </div> 
+        </div>
+        <p>{{2}}</p>
+    </div>
 </div>
