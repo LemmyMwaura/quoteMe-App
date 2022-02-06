@@ -1,4 +1,4 @@
-<form action="" (ngSubmit)="onSubmit">
+<form *ngIf="showQuote" (ngSubmit)="onSubmit()" #quoteForm="ngForm">
     <div class="form-control">
         <label for="quote">Quote</label>
         <input type="text" name="quote" [(ngModel)]="newQuote.message" #quote="ngModel" required id="quote" placeholder="Add Quote">
@@ -6,7 +6,7 @@
             <p>Quote is required</p>
         </div>
     </div>
-    {{newQuote.message}} {{newQuote.author}}
+   
     <div class="form-control">
         <label for="author">Author</label>
         <input type="text" name="author" [(ngModel)]="newQuote.author" #author="ngModel" required id="author" placeholder="Add Author">
@@ -14,5 +14,5 @@
             <p>Author is required</p>
         </div>
     </div>
-    <input type="submit" value="Save Quote" class="btn">
+    <input type="submit" value="Save Quote" class="btn btn-block">
 </form>

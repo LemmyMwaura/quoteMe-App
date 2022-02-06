@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { QuoteInterface } from 'src/app/Interface-s/quote-interface';
+import { Subscription } from 'rxjs';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-form',
@@ -10,12 +12,20 @@ export class FormComponent implements OnInit {
   newQuote = new QuoteInterface(" ", " ")
 
   @Output() onAddQuote: EventEmitter<QuoteInterface> = new EventEmitter()
+  
+  showQuote:boolean = false
+  subscription!:Subscription
 
-  constructor() { }
+  constructor(private uiservice:UiService) {
+    this.subscription = this.uiservice.onToggle().subscribe( (value) => {
+      this.showQuote = value
+    })
+  }
 
   onSubmit(){
     if(!this.newQuote.message){
       alert('Please add Quote')
+      return
     }
     this.onAddQuote.emit(this.newQuote)
   }
