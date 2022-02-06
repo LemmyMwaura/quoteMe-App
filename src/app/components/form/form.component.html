@@ -1,1 +1,18 @@
-<p>form works!</p>
+<form action="" (ngSubmit)="onSubmit">
+    <div class="form-control">
+        <label for="quote">Quote</label>
+        <input type="text" name="quote" [(ngModel)]="newQuote.message" #quote="ngModel" required id="quote" placeholder="Add Quote">
+        <div [hidden]="quote.valid || quote.pristine" class="danger">
+            <p>Quote is required</p>
+        </div>
+    </div>
+    {{newQuote.message}} {{newQuote.author}}
+    <div class="form-control">
+        <label for="author">Author</label>
+        <input type="text" name="author" [(ngModel)]="newQuote.author" #author="ngModel" required id="author" placeholder="Add Author">
+        <div [hidden]="author.valid || author.pristine" class="danger">
+            <p>Author is required</p>
+        </div>
+    </div>
+    <input type="submit" value="Save Quote" class="btn">
+</form>
