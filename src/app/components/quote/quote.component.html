@@ -1,20 +1,31 @@
-<div class="quote-item" *ngFor="let quote of quotes">{{quote.message}} 
+<div class="quote-item" *ngFor="let quote of quotes; let i =index">
+    {{quote.message}}
     <p>
         <!-- {{quote.mostLikes}} -->
-    </p> 
+    </p>
     <div class="quote-detail-wrapper">
         <app-quote-detail [quotedescription]="quote"></app-quote-detail>
     </div>
     <div class="votes">
         <div class="vote-items">
             <div class="up">
-                <app-button color="rgba(0,0,0,0)" iconcolor="RGBA(255, 67, 0, 1)" [icontype]="upIcon"></app-button>
-                1
+                <app-button 
+                    color="rgba(0,0,0,0)" 
+                    iconcolor="RGBA(255, 67, 0, 1)" 
+                    [icontype]="upIcon"
+                    (click)="upvote(i)"
+                ></app-button>
+                {{ quote.upvoteNo }}
             </div>
             <div class="down">
-                <app-button color="rgba(0,0,0,0)" iconcolor="RGBA(147, 145, 255, 1)" [icontype]="downIcon"></app-button>
-                0
-            </div> 
+                <app-button 
+                    color="rgba(0,0,0,0)" 
+                    iconcolor="RGBA(147, 145, 255, 1)" 
+                    [icontype]="downIcon"
+                    (click)="downvote(i)"  
+                ></app-button>
+                {{ quote.downvoteNo }}
+            </div>
         </div>
         <p>{{2}}</p>
     </div>

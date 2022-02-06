@@ -8,34 +8,36 @@ import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.css'],
 })
+
 export class QuoteComponent implements OnInit {
-  upIcon = faArrowAltCircleUp
-  downIcon = faArrowAltCircleDown
+  upIcon = faArrowAltCircleUp;
+  downIcon = faArrowAltCircleDown;
+
+  upvote(index:number) {
+    this.quotes[index], this.quotes[index].upvoteNo++
+  }
+
+  downvote(index:number) {
+    this.quotes[index].downvoteNo++
+  }
 
   quotes: QuoteInterface[] = [
-    {
-      message:
-        ' “Live as if you were to die tomorrow. Learn as if you were to live forever.” ',
-      mostLikes: false,
-      author: 'Mahatma Gandhi',
-      votes: 0,
-    },
-    {
-      message: ' “That which does not kill us makes us stronger.” ',
-      mostLikes: false,
-      author: 'Friedrich Nietzsche',
-    },
-    {
-      message:
-        ' “We must not allow other people’s limited perceptions to define us.” ',
-      mostLikes: false,
-      author: ' Virginia Satir',
-    },
-    {
-      message: '  “Do what you can, with what you have, where you are.” ',
-      mostLikes: false,
-      author: 'Theodore Roosevelt',
-    },
+    new QuoteInterface(
+      ' “Live as if you were to die tomorrow. Learn as if you were to live forever.” ',
+      'Mahatma Gandhi',
+    ),
+    new QuoteInterface(
+      ' “That which does not kill us makes us stronger.” ',
+      'Friedrich Nietzsche',
+    ),
+    new QuoteInterface(
+      ' “We must not allow other people’s limited perceptions to define us.” ',
+      ' Virginia Satir',
+    ),
+    new QuoteInterface(
+      '  “Do what you can, with what you have, where you are.” ',
+      'Theodore Roosevelt',
+    ),
   ];
 
   constructor() {}
