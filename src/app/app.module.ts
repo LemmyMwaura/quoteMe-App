@@ -14,6 +14,7 @@ import { FormComponent } from './components/form/form.component';
 import { QuoteDetailComponent } from './components/quote-detail/quote-detail.component';
 
 import { MostUpvotesDirective } from './directives/most-upvotes.directive';
+import { TimepipePipe } from './pipes/timepipe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { MostUpvotesDirective } from './directives/most-upvotes.directive';
     QuoteComponent,
     FormComponent,
     QuoteDetailComponent,
-    MostUpvotesDirective
+    MostUpvotesDirective,
+    TimepipePipe
   ],
   imports: [
     BrowserModule,
