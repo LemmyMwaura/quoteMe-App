@@ -39,6 +39,7 @@ export class QuoteComponent implements OnInit {
 
   addNewQuote(newitem: QuoteInterface) {
     let copyOfQuote = {...newitem}
+    copyOfQuote.date = new Date()
     this.quotes.push(copyOfQuote);
   }
 
