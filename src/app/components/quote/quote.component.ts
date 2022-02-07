@@ -39,9 +39,9 @@ export class QuoteComponent implements OnInit {
   ];
 
   addNewQuote(newitem: QuoteInterface) {
-    console.log(newitem);
-    newitem.date = new Date(newitem.date);
-    this.quotes.push(newitem);
+    let copyOfQuote = {...newitem}
+    copyOfQuote.date = new Date();
+    this.quotes.push(copyOfQuote);
   }
 
   delete(isComplete: boolean, index: number) {
