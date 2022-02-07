@@ -6,11 +6,9 @@ import { Directive, ElementRef, HostListener, Input, OnInit } from '@angular/cor
 
 export class MostUpvotesDirective {
   constructor(private el:ElementRef) { 
-    
   }
 
   FindHighestValue(){
-
   }
 
   @HostListener('click') onClicks(){
@@ -19,7 +17,7 @@ export class MostUpvotesDirective {
   }
 
   @HostListener('dblclick') onDoubleClicks(){
-    this.highestUpvoteChecker('rgba(255,255,255,0.6)')
+    this.highestUpvoteChecker('rgba(255,255,255,0.4)')
   }
 
   highestUpvoteChecker(color:string){

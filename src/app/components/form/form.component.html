@@ -1,4 +1,4 @@
-<form *ngIf="showQuote" (ngSubmit)="onSubmit()" #quoteForm="ngForm">
+<form *ngIf="showQuote" #quoteForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-control">
         <label for="quote">Quote</label>
         <input type="text" name="quote" [(ngModel)]="newQuote.message" #quote="ngModel" required id="quote" placeholder="Add Quote">

@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { QuoteInterface } from 'src/app/Interface-s/quote-interface';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/services/ui.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -24,10 +24,6 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit(){
-    if(!this.newQuote.message){
-      alert('Please add Quote')
-      return
-    }
     this.onAddQuote.emit(this.newQuote)
   }
 

@@ -14,24 +14,6 @@ export class QuoteComponent implements OnInit {
   upIcon = faArrowAltCircleUp;
   downIcon = faArrowAltCircleDown;
 
-  upvote(index:number) {
-    this.quotes[index].upvoteNo++
-    // this.quotes[index].isMostLiked = true
-  }
-
-  downvote(index:number) {
-    this.quotes[index].downvoteNo++
-  }
-
-  totalVotes(index:number){
-    this.quotes[index].totalVotes ++
-  }
-
-  addNewQuote(newitem:QuoteInterface){
-    console.log(newitem)
-    return this.quotes.push(newitem)
-  }
-
   quotes: QuoteInterface[] = [
     new QuoteInterface(
       ' “Live as if you were to die tomorrow. Learn as if you were to live forever.” ',
@@ -50,6 +32,25 @@ export class QuoteComponent implements OnInit {
       'Theodore Roosevelt',
     ),
   ];
+
+  addNewQuote(newitem:QuoteInterface){
+    console.log(newitem)
+    return this.quotes.push(newitem)
+  }
+
+  
+  upvote(index:number) {
+    this.quotes[index].upvoteNo++
+    // this.quotes[index].isMostLiked = true
+  }
+
+  downvote(index:number) {
+    this.quotes[index].downvoteNo++
+  }
+
+  totalVotes(index:number){
+    this.quotes[index].totalVotes ++
+  }
 
   constructor() {}
 

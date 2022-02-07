@@ -1,6 +1,6 @@
 <app-form (onAddQuote)="addNewQuote($event)"></app-form>
 
-<div [ngClass]="{ highest: quote.isMostLiked }"   class="quote-item" *ngFor="let quote of quotes; let i =index">
+<div [ngClass]="{ highest: quote.isMostLiked }" appMostUpvotes  class="quote-item" *ngFor="let quote of quotes; let i =index">
     {{quote.message}}
     <p>
         <!-- {{quote.isMostLiked}} -->
@@ -37,6 +37,6 @@
                     [icontype]="downIcon"
             ></app-button> -->
         </div>
-        <p appMostUpvotes class="text-votes"> Total Votes: {{ quote.totalVotes }}</p>
+        <p  class="text-votes"> Total Votes: {{ quote.totalVotes }}</p>
     </div>
 </div>
