@@ -36,6 +36,13 @@
                     [icontype]="downIcon"
             ></app-button> -->
         </div>
-        <p  class="text-votes"> Total Votes: {{ quote.totalVotes }}</p>
+        <p  class="text-votes"> Total Votes: {{ quote.totalVotes }}
+            <app-button
+                color="rgba(0,0,0,0)"
+                iconcolor="RGBA(147, 145, 255, 1)" 
+                [icontype]="trash"
+                (click)="delete(true, i)"
+            ></app-button>
+        </p>
     </div>
 </div>

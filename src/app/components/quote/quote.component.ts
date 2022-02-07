@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuoteInterface } from 'src/app/Interface-s/quote-interface';
 import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { TimepipePipe } from 'src/app/pipes/timepipe.pipe';
 
 @Component({
@@ -13,6 +14,7 @@ import { TimepipePipe } from 'src/app/pipes/timepipe.pipe';
 export class QuoteComponent implements OnInit {
   upIcon = faArrowAltCircleUp;
   downIcon = faArrowAltCircleDown;
+  trash = faTrashAlt
 
   quotes: QuoteInterface[] = [
     new QuoteInterface(
@@ -39,7 +41,18 @@ export class QuoteComponent implements OnInit {
 
   addNewQuote(newitem:QuoteInterface){
     console.log(newitem)
+    newitem.date = new Date(newitem.date)
     this.quotes.push(newitem)
+  }
+
+  delete(isComplete:boolean, index:number){
+    if (isComplete) {
+      let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].message}?`)
+    
+      if (toDelete){
+        this.quotes.splice(index,1)
+      }
+    }
   }
   
   upvote(index:number) {
