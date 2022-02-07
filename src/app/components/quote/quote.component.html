@@ -31,6 +31,12 @@
                 {{ quote.downvoteNo }}
             </div>
         </div>
+        <div class="time">
+            Created: {{ quote.date |timepipe }}s ago
+            <!-- <app-button 
+                    [icontype]="downIcon"
+            ></app-button> -->
+        </div>
         <p appMostUpvotes class="text-votes"> Total Votes: {{ quote.totalVotes }}</p>
     </div>
 </div>

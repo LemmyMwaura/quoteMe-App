@@ -34,6 +34,12 @@
     color: white;
 }
 
+.time{
+    background-color: rgba(185, 28, 86,0.9);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: white;
+}
 .text-votes{
     background-color: rgba(185, 28, 86,0.9);
     border-radius: 0.5rem;

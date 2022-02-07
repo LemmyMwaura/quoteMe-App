@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { QuoteInterface } from 'src/app/Interface-s/quote-interface';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/services/ui.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form',

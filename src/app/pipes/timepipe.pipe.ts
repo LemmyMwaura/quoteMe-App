@@ -4,13 +4,18 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'timepipe'
 })
 export class TimepipePipe implements PipeTransform {
+  transform(value: any): any {
+    if(value){
+      let time:any = new Date()
+      let diff = Math.abs(time - value)
+      let diffInsec = diff*0.001
 
-  transform(value: any): number {
-    let now = new Date()
-    
+      console.log(value)
+      console.log(time)
+      console.log(diff)
+      console.log(diffInsec)
 
-
-    return 5
+      return diffInsec.toFixed(3)
+    }
   }
-
 }

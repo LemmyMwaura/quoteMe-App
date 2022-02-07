@@ -1,18 +1,30 @@
-import { Directive, ElementRef, HostListener, HostBinding } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[appMostUpvotes]'
 })
+
 export class MostUpvotesDirective {
-  constructor(private el:ElementRef,) { 
-    // el.nativeElement.style.backgroundColor = 'red'
-  }
-
-  highestUpvoteChecker(){
-
-  }
-
-  ngOnInit(){
+  constructor(private el:ElementRef) { 
     
   }
+
+  FindHighestValue(){
+
+  }
+
+  @HostListener('click') onClicks(){
+    console.log(this)
+    this.highestUpvoteChecker('yellow')
+  }
+
+  @HostListener('dblclick') onDoubleClicks(){
+    this.highestUpvoteChecker('rgba(255,255,255,0.6)')
+  }
+
+  highestUpvoteChecker(color:string){
+    this.el.nativeElement.style.backgroundColor = color
+  }
+
+  ngOnInit(){}
 }
