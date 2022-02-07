@@ -1,5 +1,5 @@
-<form *ngIf="showQuote" #quoteForm="ngForm" (ngSubmit)="onSubmit()">
-    <div class="form-control">
+<form *ngIf="showQuote" #quoteForm="ngForm" (ngSubmit)="onSubmit(quoteForm)">
+    <div class="form-group">
         <label for="quote">Quote</label>
         <input type="text" name="quote" [(ngModel)]="newQuote.message" #quote="ngModel" required id="quote" placeholder="Add Quote">
         <div [hidden]="quote.valid || quote.pristine" class="danger">
@@ -7,7 +7,7 @@
         </div>
     </div>
    
-    <div class="form-control">
+    <div class="form-group">
         <label for="author">Author</label>
         <input type="text" name="author" [(ngModel)]="newQuote.author" #author="ngModel" required id="author" placeholder="Add Author">
         <div [hidden]="author.valid || author.pristine" class="danger">
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="form-control">
+    <div class="form-group">
         <label for="user">User</label>
         <input type="text" name="user" [(ngModel)]="newQuote.user" #user="ngModel" required id="user" placeholder="Add Your Name">
         <div [hidden]="user.valid || user.pristine" class="danger">

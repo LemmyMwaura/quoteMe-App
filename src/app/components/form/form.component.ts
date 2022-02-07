@@ -23,8 +23,9 @@ export class FormComponent implements OnInit {
     })
   }
 
-  onSubmit(){
+  onSubmit(quoteForm: NgForm){
     this.onAddQuote.emit(this.newQuote)
+    // quoteForm.reset()
   }
 
   ngOnInit(): void {

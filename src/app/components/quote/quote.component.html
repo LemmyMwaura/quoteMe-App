@@ -1,7 +1,7 @@
 <app-form (onAddQuote)="addNewQuote($event)"></app-form>
 
 <div [ngClass]="{ highest: quote.isMostLiked }" appMostUpvotes  class="quote-item" *ngFor="let quote of quotes; let i =index">
-    {{quote.message}}
+    “{{quote.message}}”
 
     <div class="quote-detail-wrapper">
         <app-quote-detail [quotedescription]="quote"></app-quote-detail>
