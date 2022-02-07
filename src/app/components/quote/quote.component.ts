@@ -18,26 +18,29 @@ export class QuoteComponent implements OnInit {
     new QuoteInterface(
       ' “Live as if you were to die tomorrow. Learn as if you were to live forever.” ',
       'Mahatma Gandhi',
+      'Lemmy'
     ),
     new QuoteInterface(
       ' “That which does not kill us makes us stronger.” ',
       'Friedrich Nietzsche',
+      'Brandon'
     ),
     new QuoteInterface(
       ' “We must not allow other people’s limited perceptions to define us.” ',
       ' Virginia Satir',
+      'Kim'
     ),
     new QuoteInterface(
       '  “Do what you can, with what you have, where you are.” ',
       'Theodore Roosevelt',
+      'Susan'
     ),
   ];
 
   addNewQuote(newitem:QuoteInterface){
     console.log(newitem)
-    return this.quotes.push(newitem)
+    this.quotes.push(newitem)
   }
-
   
   upvote(index:number) {
     this.quotes[index].upvoteNo++

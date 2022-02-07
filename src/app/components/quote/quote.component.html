@@ -2,12 +2,11 @@
 
 <div [ngClass]="{ highest: quote.isMostLiked }" appMostUpvotes  class="quote-item" *ngFor="let quote of quotes; let i =index">
     {{quote.message}}
-    <p>
-        <!-- {{quote.isMostLiked}} -->
-    </p>
+
     <div class="quote-detail-wrapper">
         <app-quote-detail [quotedescription]="quote"></app-quote-detail>
     </div>
+    
     <div class="votes">
         <div class="vote-items">
             <div class="up">

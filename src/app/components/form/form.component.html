@@ -14,5 +14,14 @@
             <p>Author is required</p>
         </div>
     </div>
+
+    <div class="form-control">
+        <label for="user">User</label>
+        <input type="text" name="user" [(ngModel)]="newQuote.user" #user="ngModel" required id="user" placeholder="Add Your Name">
+        <div [hidden]="user.valid || user.pristine" class="danger">
+            <p>Your name is required</p>
+        </div>
+    </div>
+
     <input type="submit" value="Save Quote" class="btn btn-block">
 </form>

@@ -10,7 +10,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  newQuote = new QuoteInterface(" ", " ")
+  newQuote = new QuoteInterface("", "", "")
 
   @Output() onAddQuote: EventEmitter<QuoteInterface> = new EventEmitter()
   

@@ -5,7 +5,7 @@ export class QuoteInterface {
     totalVotes: number;
     date:any;
 
-    constructor( public message: string, public author:string,){
+    constructor( public message: string, public author:string, public user:string){
         this.isMostLiked = false
         this.upvoteNo = 1;
         this.downvoteNo = 0;
