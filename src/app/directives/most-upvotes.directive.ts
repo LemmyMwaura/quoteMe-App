@@ -1,4 +1,5 @@
 import { Directive, ElementRef, HostListener, Input, OnInit } from '@angular/core';
+import { QuoteComponent } from 'src/app/components/quote/quote.component';
 
 @Directive({
   selector: '[appMostUpvotes]'
@@ -8,12 +9,7 @@ export class MostUpvotesDirective {
   constructor(private el:ElementRef) { 
   }
 
-  FindHighestValue(){
-    
-  }
-
   @HostListener('click') onClicks(){
-    console.log(this)
     this.highestUpvoteChecker('yellow')
   }
 

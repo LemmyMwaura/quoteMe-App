@@ -3,7 +3,6 @@ import { QuoteInterface } from 'src/app/Interface-s/quote-interface';
 import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { TimepipePipe } from 'src/app/pipes/timepipe.pipe';
 
 @Component({
   selector: 'app-quotes',
@@ -40,7 +39,6 @@ export class QuoteComponent implements OnInit {
 
   addNewQuote(newitem: QuoteInterface) {
     let copyOfQuote = {...newitem}
-    copyOfQuote.date = new Date();
     this.quotes.push(copyOfQuote);
   }
 
