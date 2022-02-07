@@ -52,4 +52,7 @@ a{
 
 .danger{
     color: red;
+    font-weight: bold;
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
 }

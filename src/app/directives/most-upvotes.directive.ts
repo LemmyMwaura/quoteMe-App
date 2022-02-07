@@ -9,6 +9,7 @@ export class MostUpvotesDirective {
   }
 
   FindHighestValue(){
+    
   }
 
   @HostListener('click') onClicks(){
