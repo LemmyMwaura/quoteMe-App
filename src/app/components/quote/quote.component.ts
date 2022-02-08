@@ -79,9 +79,8 @@ export class QuoteComponent implements OnInit {
     let i = array.indexOf(max);
 
     this.quotes[i].isMostLiked = true;
-    console.log(this.quotes[i].isMostLiked)
+    // console.log(this.quotes[i].isMostLiked)
   }
-
   constructor() {}
 
   ngOnInit(): void {}
