@@ -13,7 +13,7 @@ export class MostUpvotesDirective {
   @HostListener('click') onClicks(){
     this.editOtherElem()
     if (this.isMost.quote){
-      this.el.nativeElement.style.backgroundColor = 'rgba(0,0,0,0.4)';
+      this.el.nativeElement.style.backgroundColor = 'yellow';
     } else {
       this.el.nativeElement.style.backgroundColor = 'rgba(255,255,255,0.4)';
     }
