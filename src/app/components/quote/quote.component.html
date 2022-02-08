@@ -1,13 +1,8 @@
 <app-form (onAddQuote)="addNewQuote($event)"></app-form>
 
-<!-- Most Upvotes -->
-<div #main class="quote-item" [ngClass]="{ highest: quote.isMostLiked}"  *ngFor="let quote of quotes; let i =index" >
+    <div #main class="quote-item" appMostUpvotes [isMost]="{ quote: quotes}" [ngClass]="{ highest: quote.isMostLiked}"   *ngFor="let quote of quotes; let i =index" >
     “{{quote.message}}”
-
-    <!-- appMostUpvotes [isMost]="{ quote: quote.isMostLiked}"  -->
-
-    <!-- [ngClass]="{ highest: quote.isMostLiked}"  -->
-
+    
     <div class="quote-detail-wrapper">
         <app-quote-detail [quotedescription]="quote"></app-quote-detail>
     </div>
@@ -21,7 +16,6 @@
                     [icontype]="upIcon"
                     (click)="upvote(i)"
                     (click)="totalVotes(i)"
-                    (click)="mostVotes()"
                 ></app-button>
                 {{ quote.upvoteNo }}
             </div>
