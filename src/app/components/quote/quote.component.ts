@@ -68,6 +68,20 @@ export class QuoteComponent implements OnInit {
     this.quotes[index].totalVotes++;
   }
 
+  mostVotes(){
+    let array:number[] = []
+    this.quotes.forEach((quote) => {
+      quote.isMostLiked = false
+      array.push(quote.upvoteNo)
+    })
+
+    let max = Math.max(...array)
+    let i = array.indexOf(max);
+
+    this.quotes[i].isMostLiked = true;
+    console.log(this.quotes[i].isMostLiked)
+  }
+
   constructor() {}
 
   ngOnInit(): void {}
