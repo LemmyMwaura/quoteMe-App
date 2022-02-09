@@ -20,19 +20,19 @@ ___
 
 ### BDD
  #### Context
-   Given that the user adds a quote and the authors name\
-      And the name is valid\
-      And the quote is valid\
+   Given that the user adds a quote, the Authors name, and his User name,\
+      And the name(s) are valid,\
+      And the quote is valid,
  #### Event
   When the User clicks the submit button
 #### Outcomes
   Then the app should add the quote to the list of quotes present
 
-* [x] User Inputs Quote and Author's name
+* [x] User Inputs Quote, Author's name and his/her name.
 * [x] Submit button Starts the app.
 * [x] Form validity checks are done.
-* [x] Custom pipe calc time since quote was created.
-* [ ] Directive highlights most liked quote.
+* [x] Custom pipe calculates time since quote was created.
+* [x] Directive highlights most liked quote.
 
 ---
 
@@ -83,7 +83,7 @@ ___
 ## Author 
 Hi there, I'm Lemmy and i love to code. Connect With me:
 
-- 💻 Project Website - [Akan Name](https://lemmymwaura.github.io/quoteMe-App/)
+- 💻 Project Website - [Quote me App](https://lemmymwaura.github.io/quoteMe-App/)
 - 🎱 Github - [@lemmyMwaura](https://github.com/LemmyMwaura)
 
 ---
