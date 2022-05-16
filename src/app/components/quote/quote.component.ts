@@ -10,6 +10,9 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./quote.component.css'],
 })
 export class QuoteComponent implements OnInit {
+  
+  constructor() {}
+
   upIcon = faArrowAltCircleUp;
   downIcon = faArrowAltCircleDown;
   trash = faTrashAlt;
@@ -57,7 +60,6 @@ export class QuoteComponent implements OnInit {
 
   upvote(index: number) {
     this.quotes[index].upvoteNo++;
-    // this.quotes[index].isMostLiked = true
   }
 
   downvote(index: number) {
@@ -67,9 +69,6 @@ export class QuoteComponent implements OnInit {
   totalVotes(index: number) {
     this.quotes[index].totalVotes++;
   }
-
-
-  constructor() {}
 
   ngOnInit(): void {}
 }

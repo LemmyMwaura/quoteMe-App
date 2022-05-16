@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, HostBinding, Input, Renderer2 } from '@angular/core';
+import { Directive,HostListener,Input } from '@angular/core';
 
 @Directive({
   selector: '[appMostUpvotes]'
@@ -7,23 +7,22 @@ import { Directive, ElementRef, HostListener, HostBinding, Input, Renderer2 } fr
 export class MostUpvotesDirective {
   @Input() isMost: any
  
-  constructor(private el:ElementRef, private renderer: Renderer2 ) { 
-  }
+  constructor() {}
 
   @HostListener('click') onClicks(){
-    this.editOtherElem()
+    this.handleUpvotes()
   }
 
-  editOtherElem(){
+  handleUpvotes(){
     let array:number[] = []
-    this.isMost.quote.forEach((quote:any) => {
+    this.isMost.quotes.forEach((quote:any) => {
       quote.isMostLiked = false
       array.push(quote.upvoteNo)
     })
 
     let max = Math.max(...array)
     let i = array.indexOf(max)
-    this.isMost.quote[i].isMostLiked = true;
+    this.isMost.quotes[i].isMostLiked = true;
   }
 
   ngOnInit(){}

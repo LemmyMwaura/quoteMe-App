@@ -14,3 +14,11 @@ header > h1 {
     padding: 0 1rem;
     color: #97164c;
 }
+
+.btn-menu{
+    width: 5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
